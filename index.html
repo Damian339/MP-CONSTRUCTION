@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP CONSTRUCTION</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background: #f4f4f4;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #F3C700;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+
+        .hero {
+            height: 100vh;
+            background: scr=('02cdc95f-dc91-4c08-b6d9-bd68318fea30.JPG') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInDown 1.5s ease;
+        }
+
+        .hero-content h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .hero-content a {
+            background: #F3C700;
+            padding: 15px 30px;
+            color: #333;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .hero-content a:hover {
+            background: #ffb000;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .services {
+            padding: 80px 50px;
+            background: #fff;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .service-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .service-item {
+            background: #f9f9f9;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .service-item h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .about {
+            display: flex;
+            align-items: center;
+            padding: 80px 50px;
+            gap: 50px;
+            background: #f4f4f4;
+        }
+
+        .about img {
+            max-width: 50%;
+            border-radius: 10px;
+        }
+
+        .about-text {
+            max-width: 50%;
+        }
+
+        .about-text h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MP Construction</h1>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#services">Usługi</a>
+            <a href="#about">O nas</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h2>Tworzymy Twoje Wymarzone Wnętrza</h2>
+            <p>Profesjonalne wykończenia wnętrz mieszkań, domów i biur. Zaufaj ekspertom.</p>
+            <a href="#services">Poznaj nasze usługi</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Nasze Usługi</h2>
+        <div class="service-items">
+            <div class="service-item">
+                <img src="0215bd6a-382d-489a-9ea1-719e05e16e73.JPG" alt="Remonty mieszkań">
+                <h3>Remonty mieszkań</h3>
+                <p>Odświeżamy i modernizujemy wnętrza zgodnie z Twoimi oczekiwaniami.</p>
+            </div>
+            <div class="service-item">
+                <img src="0774a9cd-6173-419f-a1ed-6628dd83fddf.JPG" alt="Wykończenia pod klucz">
+                <h3>Wykończenia pod klucz</h3>
+                <p>Oddajemy gotowe do użytku przestrzenie z dbałością o każdy szczegół.</p>
+            </div>
+            <div class="service-item">
+                <img src="2a72673c-8300-4763-a1ec-7bd2187b1d4d.JPG" alt="Adaptacje biur">
+                <h3>Adaptacje biur</h3>
+                <p>Tworzymy funkcjonalne i estetyczne biura dla firm.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <img src="C:\Users\Administrator\Desktop\strona\hydraulik.jpg" alt="O nas">
+        <div class="about-text">
+            <h2>O Nas</h2>
+            <p>Jesteśmy firmą z wieloletnim doświadczeniem w branży budowlanej. Specjalizujemy się w kompleksowych remontach i wykończeniach wnętrz, oferując najwyższą jakość usług na rynku.</p>
+            <p>Naszym celem jest spełnienie oczekiwań każdego klienta, niezależnie od wielkości projektu.</p>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <h2>Galeria naszych realizacji</h2>
+        <div class="gallery-slider">
+            <div class="slider-wrapper">
+                <img src="2b6d9a20-39e8-4084-bae9-e2f0fa6dbd0d.JPG"  width="300" height="200" alt="Zdjęcie 1">
+                <img src="34fbc5e1-e571-420f-bb87-05fc80fcc74a.JPG"  width="300" height="200" alt="Zdjęcie 2">
+                <img src="350c53e5-171c-41f3-a804-3c1dc3c47833.JPG"   width="300" height="200" alt="Zdjęcie 3">
+                <img src="3e29e9c9-a61d-4783-8c38-b18836d30f38.JPG"  width="300" height="200" alt="Zdjęcie 4">
+            </div>
+        </div>
+    </section>
+
+    <style>/* Stylizacja galerii */
+        .gallery {
+            padding: 60px 40px;
+            background: #fff;
+            text-align: center;
+        }
+        
+        .gallery h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-slider {
+            position: relative;
+            overflow: hidden;
+            max-width: 100%;
+            height: 400px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slider-wrapper {
+            display: flex;
+            width: calc(100% * 4); /* Liczba zdjęć w galerii */
+            animation: slide 16s infinite;
+        }
+        
+        .slider-wrapper img {
+            width: 100%;
+            flex-shrink: 0;
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        /* Animacja przewijania */
+        @keyframes slide {
+            0%, 20% { transform: translateX(0); }
+            25%, 45% { transform: translateX(-100%); }
+            50%, 70% { transform: translateX(-200%); }
+            75%, 100% { transform: translateX(-300%); }
+        }
+        </style>
+        <script>
+            const slider = document.querySelector('.slider-wrapper');
+            const gallery = document.querySelector('.gallery-slider');
+        
+            gallery.addEventListener('mouseenter', () => {
+                slider.style.animationPlayState = 'paused';
+            });
+        
+            gallery.addEventListener('mouseleave', () => {
+                slider.style.animationPlayState = 'running';
+            });
+        </script>
+        
+
+
+
+
+    <footer id="contact">
+        <p>&copy; 2024 MP Construction | Wszystkie prawa zastrzeżone | <a href="tel:666719834">666 719 834</a></p>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
