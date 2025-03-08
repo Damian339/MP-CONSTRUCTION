@@ -57,6 +57,58 @@
             color: #000;
         }
 
+        .hero {
+            height: 100vh;
+            background: url('https://klimaty-wnetrz.pl/images/wykonczenie-mieszkania-krok-po-kroku-6138.webp') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInDown 1.5s ease;
+        }
+
+        .hero-content h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .hero-content a {
+            background: #F3C700;
+            padding: 15px 30px;
+            color: #333;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .hero-content a:hover {
+            background: #ffb000;
+        }
+
         .gallery {
             padding: 60px 20px;
             background: #fff;
@@ -115,12 +167,6 @@
             color: white;
             cursor: pointer;
         }
-
-        @media (max-width: 600px) {
-            .gallery-container {
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            }
-        }
     </style>
 </head>
 <body>
@@ -134,14 +180,6 @@
             <a href="#contact">Kontakt</a>
         </nav>
     </header>
-
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <h2>Tworzymy Twoje Wymarzone Wnętrza</h2>
-            <p>Profesjonalne wykończenia wnętrz mieszkań, domów i biur. Zaufaj ekspertom.</p>
-            <a href="#services">Poznaj nasze usługi</a>
-        </div>
-    </section>
 
     <section class="gallery" id="gallery">
         <h2>Nasza Galeria</h2>
