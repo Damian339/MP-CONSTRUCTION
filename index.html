@@ -268,6 +268,56 @@
             cursor: pointer;
         }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    /* Header - make nav items stack */
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Hero - adjust text size */
+    .hero-content h2 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    /* Services - stack items in one column */
+    .service-items {
+        grid-template-columns: 1fr;
+    }
+
+    /* About - stack image and text */
+    .about {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .about img {
+        max-width: 100%;
+    }
+
+    .about-text {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Hero - adjust font size for very small screens */
+    .hero-content h2 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+        
     </style>
 </head>
 <body>
