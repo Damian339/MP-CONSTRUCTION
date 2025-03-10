@@ -109,92 +109,68 @@
             background: #ffb000;
         }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .services {
-            padding: 80px 50px;
+        .gallery {
+            padding: 60px 40px;
             background: #fff;
+            text-align: center;
         }
 
-        .services h2 {
-            text-align: center;
+        .gallery h2 {
             font-size: 36px;
             margin-bottom: 40px;
         }
 
-        .service-items {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            animation: fadeInUp 1.5s ease;
-        }
-
-        .service-item {
-            background: #f9f9f9;
-            padding: 30px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .service-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .service-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        .service-item h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-
-        .about {
+        .gallery-container {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .gallery-container img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-container img:hover {
+            transform: scale(1.1);
+        }
+
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
             align-items: center;
-            padding: 80px 50px;
-            gap: 50px;
-            background: #f4f4f4;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
         }
 
-        .about img {
-            max-width: 50%;
-            border-radius: 10px;
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
         }
 
-        .about-text {
-            max-width: 50%;
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
         }
 
-        .about-text h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            line-height: 1.6;
-        }
-
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -203,76 +179,49 @@
         <h1>MP Construction</h1>
         <nav>
             <a href="#hero">Home</a>
-            <a href="#services">Usługi</a>
-            <a href="#about">O nas</a>
-            <a href="#contact">Kontakt</a>
+            <a href="#gallery">Galeria</a>
         </nav>
     </header>
-
 
     <section class="hero" id="hero">
         <div class="hero-content">
             <h2>Tworzymy Twoje Wymarzone Wnętrza</h2>
             <p>Profesjonalne wykończenia wnętrz mieszkań, domów i biur. Zaufaj ekspertom.</p>
-            <a href="#services">Poznaj nasze usługi</a>
         </div>
     </section>
 
-    <section class="services" id="services">
-        <h2>Nasze Usługi</h2>
-        <div class="service-items">
-            <div class="service-item">
-                <img src="0215bd6a-382d-489a-9ea1-719e05e16e73.JPG" alt="Remonty mieszkań">
-                <h3>Remonty mieszkań</h3>
-                <p>Odświeżamy i modernizujemy wnętrza zgodnie z Twoimi oczekiwaniami.</p>
-            </div>
-            <div class="service-item">
-                <img src="0774a9cd-6173-419f-a1ed-6628dd83fddf.JPG" alt="Wykończenia pod klucz">
-                <h3>Wykończenia pod klucz</h3>
-                <p>Oddajemy gotowe do użytku przestrzenie z dbałością o każdy szczegół.</p>
-            </div>
-            <div class="service-item">
-                <img src="2a72673c-8300-4763-a1ec-7bd2187b1d4d.JPG" alt="Adaptacje biur">
-                <h3>Adaptacje biur</h3>
-                <p>Tworzymy funkcjonalne i estetyczne biura dla firm.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="about" id="about">
-        <img src="d59b198c-be73-4266-a4a1-e855c910f9e7.JPG" alt="O nas">
-        <div class="about-text">
-            <h2>O Nas</h2>
-            <p>Jesteśmy firmą z wieloletnim doświadczeniem w branży budowlanej. Specjalizujemy się w kompleksowych remontach i wykończeniach wnętrz, oferując najwyższą jakość usług na rynku.</p>
-            <p>Naszym celem jest spełnienie oczekiwań każdego klienta, niezależnie od wielkości projektu.</p>
-        </div>
-    </section>
-
-    
     <section class="gallery" id="gallery">
         <h2>Galeria naszych realizacji</h2>
-        <div class="gallery-grid">
-            <img src="2b6d9a20-39e8-4084-bae9-e2f0fa6dbd0d.JPG" onclick="openLightbox(this.src)" alt="Zdjęcie 1">
-            <img src="34fbc5e1-e571-420f-bb87-05fc80fcc74a.JPG" onclick="openLightbox(this.src)" alt="Zdjęcie 2">
-            <img src="350c53e5-171c-41f3-a804-3c1dc3c47833.JPG" onclick="openLightbox(this.src)" alt="Zdjęcie 3">
-            <img src="3e29e9c9-a61d-4783-8c38-b18836d30f38.JPG" onclick="openLightbox(this.src)" alt="Zdjęcie 4">
+        <div class="gallery-container">
+            <img src="img1.jpg" alt="Zdjęcie 1">
+            <img src="img2.jpg" alt="Zdjęcie 2">
+            <img src="img3.jpg" alt="Zdjęcie 3">
+            <img src="img4.jpg" alt="Zdjęcie 4">
         </div>
     </section>
 
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <img id="lightbox-img" src="" alt="Podgląd zdjęcia">
+    <div class="lightbox" id="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="">
     </div>
 
     <script>
-        function openLightbox(src) {
-            document.getElementById('lightbox-img').src = src;
-            document.getElementById('lightbox').style.display = 'flex';
-        }
+        const images = document.querySelectorAll('.gallery-container img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.classList.add('active');
+                lightboxImg.src = img.src;
+            });
+        });
 
         function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
+            lightbox.classList.remove('active');
         }
     </script>
+
 
     <footer id="contact">
         <p>&copy; 2024 MP Construction | Wszystkie prawa zastrzeżone | <a href="tel:666719834">666 719 834</a></p>
