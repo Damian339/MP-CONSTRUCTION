@@ -247,74 +247,70 @@
         </div>
     </section>
 
-    <section class="gallery" id="gallery">
-        <h2>Galeria naszych realizacji</h2>
-        <div class="gallery-slider">
-            <div class="slider-wrapper">
-                <img src="2b6d9a20-39e8-4084-bae9-e2f0fa6dbd0d.JPG"  width="300" height="200" alt="Zdjęcie 1">
-                <img src="34fbc5e1-e571-420f-bb87-05fc80fcc74a.JPG"  width="300" height="200" alt="Zdjęcie 2">
-                <img src="350c53e5-171c-41f3-a804-3c1dc3c47833.JPG"   width="300" height="200" alt="Zdjęcie 3">
-                <img src="3e29e9c9-a61d-4783-8c38-b18836d30f38.JPG"  width="300" height="200" alt="Zdjęcie 4">
-            </div>
-        </div>
-    </section>
-
-    <style>/* Stylizacja galerii */
-        .gallery {
-            padding: 60px 40px;
-            background: #fff;
-            text-align: center;
-        }
-        
-        .gallery h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
-        }
-        
-        .gallery-slider {
-            position: relative;
-            overflow: hidden;
-            max-width: 100%;
-            height: 400px;
-            margin: 0 auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .slider-wrapper {
+      <title>Galeria Zdjęć</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
             display: flex;
-            width: calc(100% * 4); /* Liczba zdjęć w galerii */
-            animation: slide 16s infinite;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
         }
-        
-        .slider-wrapper img {
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            max-width: 800px;
+        }
+        .gallery img {
             width: 100%;
-            flex-shrink: 0;
-            height: 400px;
-            object-fit: cover;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
         }
-        
-        /* Animacja przewijania */
-        @keyframes slide {
-            0%, 20% { transform: translateX(0); }
-            25%, 45% { transform: translateX(-100%); }
-            50%, 70% { transform: translateX(-200%); }
-            75%, 100% { transform: translateX(-300%); }
+        .gallery img:hover {
+            transform: scale(1.05);
         }
-        </style>
-        <script>
-            const slider = document.querySelector('.slider-wrapper');
-            const gallery = document.querySelector('.gallery-slider');
-        
-            gallery.addEventListener('mouseenter', () => {
-                slider.style.animationPlayState = 'paused';
-            });
-        
-            gallery.addEventListener('mouseleave', () => {
-                slider.style.animationPlayState = 'running';
-            });
-        </script>
-        
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <img src="2b6d9a20-39e8-4084-bae9-e2f0fa6dbd0d.JPG" onclick="openLightbox(this.src)" alt="Zdjęcie 1">
+        <img src="34fbc5e1-e571-420f-bb87-05fc80fcc74a.JPG" onclick="openLightbox(this.src)" alt="Zdjęcie 2">
+        <img src="350c53e5-171c-41f3-a804-3c1dc3c47833.JPG" onclick="openLightbox(this.src)" alt="Zdjęcie 3">
+    </div>
+    
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Podgląd zdjęcia">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
 
 
 
