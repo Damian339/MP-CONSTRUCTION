@@ -268,54 +268,74 @@
             cursor: pointer;
         }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    /* Header - make nav items stack */
-    nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            /* Header - make nav items stack */
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
 
-    /* Hero - adjust text size */
-    .hero-content h2 {
-        font-size: 36px;
-    }
+            /* Hero - adjust text size */
+            .hero-content h2 {
+                font-size: 36px;
+            }
 
-    .hero-content p {
-        font-size: 16px;
-    }
+            .hero-content p {
+                font-size: 16px;
+            }
 
-    /* Services - stack items in one column */
-    .service-items {
-        grid-template-columns: 1fr;
-    }
+            /* Services - stack items in one column */
+            .service-items {
+                grid-template-columns: 1fr;
+            }
 
-    /* About - stack image and text */
-    .about {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
+            /* About - stack image and text */
+            .about {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
 
-    .about img {
-        max-width: 100%;
-    }
+            .about img {
+                max-width: 100%;
+            }
 
-    .about-text {
-        max-width: 100%;
-    }
-}
+            .about-text {
+                max-width: 100%;
+            }
+        }
 
-@media (max-width: 480px) {
-    /* Hero - adjust font size for very small screens */
-    .hero-content h2 {
-        font-size: 28px;
-    }
+        @media (max-width: 480px) {
+            /* Hero - adjust font size for very small screens */
+            .hero-content h2 {
+                font-size: 28px;
+            }
 
-    .hero-content p {
-        font-size: 14px;
-    }
+            .hero-content p {
+                font-size: 14px;
+            }
+
+            /* Services - adjust text sizes */
+            .service-item h3 {
+                font-size: 20px;
+            }
+
+            .service-item p {
+                font-size: 14px;
+            }
+
+            /* Gallery - stack items vertically */
+            .gallery-container {
+                flex-direction: column;
+            }
+
+            .gallery-item {
+                width: 100%;
+                height: 150px;
+            }
+       
 
         
     </style>
